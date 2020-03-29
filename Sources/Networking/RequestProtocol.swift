@@ -7,11 +7,13 @@
 
 import Foundation
 
-protocol Request {
-    associatedtype Body: Encodable
+public protocol RequestProtocol {
     var endpointPath: String { get }
-    var body: Body? { get }
     var headers: [HTTP.Header.Key: HTTP.Header.Value] { get }
     var method: HTTP.Method { get }
 }
 
+public protocol RequestBodyProtocol {
+    associatedtype Body: Encodable
+    var body: Body { get }
+}

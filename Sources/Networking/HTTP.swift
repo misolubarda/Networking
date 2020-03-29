@@ -7,13 +7,13 @@
 
 import Foundation
 
-enum HTTP {
-    enum Method {
+public enum HTTP {
+    public enum Method {
         case get, post
     }
 
-    enum Header {
-        enum Key: Hashable {
+    public enum Header {
+        public enum Key: Hashable {
             case authorization
             case contentType
             case custom(key: String)
@@ -30,7 +30,7 @@ enum HTTP {
             }
         }
 
-        enum Value {
+        public enum Value {
             case applicationJSON
             case custom(value: String)
 
